@@ -1,5 +1,7 @@
 package lesson2_2;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args)
     {
@@ -185,9 +187,7 @@ public class Main {
     // 14.
     public static int[] createFilledArray(int len, int initialValue) {
         int[] array = new int[len];
-        for (int i = 0; i < len; i++) {
-            array[i] = initialValue;
-        }
+        Arrays.fill(array, initialValue);
         return array;
     }
 
