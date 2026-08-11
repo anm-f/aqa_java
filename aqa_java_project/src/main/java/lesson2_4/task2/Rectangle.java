@@ -1,16 +1,13 @@
 package lesson2_4.task2;
 
-public class Rectangle implements Shape {
+public class Rectangle extends ColoredShape {
     private double width;
     private double height;
-    private String fillColor;
-    private String borderColor;
 
     public Rectangle(double width, double height, String fillColor, String borderColor) {
+        super(fillColor, borderColor);
         this.width = width;
         this.height = height;
-        this.fillColor = fillColor;
-        this.borderColor = borderColor;
     }
 
     @Override
@@ -21,15 +18,5 @@ public class Rectangle implements Shape {
     @Override
     public double getArea() {
         return width * height;
-    }
-
-    @Override
-    public String getFillColor() {
-        return fillColor;
-    }
-
-    @Override
-    public String getBorderColor() {
-        return borderColor;
     }
 }
