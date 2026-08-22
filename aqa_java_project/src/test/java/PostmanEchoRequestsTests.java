@@ -72,13 +72,14 @@ public class PostmanEchoRequestsTests {
 
     @Test
     public void postFormDataRequest_RestAssured() {
-        given().multiPart("foo1", "bar1")
-            .multiPart("foo2", "bar2")
+        given()
+            .contentType("application/x-www-form-urlencoded; charset=utf-8")
+            .formParam("foo1", "bar1")
+            .formParam("foo2", "bar2")
             .when()
             .post("/post")
             .then()
             .statusCode(200)
-            .contentType("application/json")
             .body("form.foo1", equalTo("bar1"))
             .body("form.foo2", equalTo("bar2"));
     }
@@ -86,9 +87,10 @@ public class PostmanEchoRequestsTests {
     @Test
     public void postFormDataRequest_JUnit() {
         Response response = given()
-            .multiPart("foo1", "bar1")
-            .multiPart("foo2", "bar2")
-            .post("/post");
+                .contentType("application/x-www-form-urlencoded; charset=utf-8")
+                .formParam("foo1", "bar1")
+                .formParam("foo2", "bar2")
+                .post("/post");
 
         assertEquals(200, response.statusCode());
 
