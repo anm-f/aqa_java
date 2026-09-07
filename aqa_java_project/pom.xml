@@ -28,7 +28,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- SLF4J провайдер (убирает первое предупреждение) -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -42,5 +41,20 @@
             <version>2.2</version>
             <scope>test</scope>
         </dependency>
+      
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>6.0.1</version>
+            <scope>test</scope>
+        </dependency>
+      
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.22.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
 </project>
